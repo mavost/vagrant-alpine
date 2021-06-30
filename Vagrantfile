@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
     rtb.vm.provider "virtualbox" do |vb|
       vb.name = "rt-b"
       vb.cpus = "2"
-      vb.memory = "2048"
+      vb.memory = "1024"
     end
     rtb.vm.provision "shell", path: "scripts/rtb-provision.sh"
   end

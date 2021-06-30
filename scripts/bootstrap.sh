@@ -5,10 +5,13 @@
 export DEBIAN_FRONTEND=noninteractive
 
 # Systemupgrade
-apt-get update && apt-get -y dist-upgrade
+apt-get update
+apt-get -y dist-upgrade
 apt-get --purge -y autoremove
 
-# set up time zone
+# setting up time zone
 # as in https://stackoverflow.com/questions/8671308
 ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 dpkg-reconfigure --frontend noninteractive tzdata
+
+echo "...end of basic provision"
