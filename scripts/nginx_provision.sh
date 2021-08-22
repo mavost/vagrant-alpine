@@ -13,7 +13,7 @@ rc-update add nginx default
 /etc/init.d/nginx start
 
 echo "... cloning docuserver files"
-apk add git nano
+apk add git
 git clone https://github.com/mavost/docuserver/
 chown -R wwwuser docuserver/
 echo "... nginx provision successful"

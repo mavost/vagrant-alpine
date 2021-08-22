@@ -1,16 +1,20 @@
-# Basic NGINX web server virtualized
-project realized using the following components:
+# Alpine Linux virtualized
+project uses the following components:
+- host system is Ubuntu 20.04 LTS
+
 - runs on an lean Linux Alpine box
 
 - virtual machine is deployed using Vagrant IAC
 
 - Vagrant uses the non-standard libvirt provider, i.e. QEMU/KVM hypervisor
 
-- due to lack of experience NGINX set up is very basic
+There are two further provisioning options defined so far:
+    
+  1. a very basic NGINX setup  
+  &rightarrow; sample website is fetched from a generic code repository using git
 
-- sample website is fetched from a generic code repository using git
-
-- host system is Ubuntu 20.04 LTS
+  2. a basic docker installation  
+  &rightarrow; testing an image pull from tutorial: *docker/getting-started:latest*
 
 ![alt text][img01]
 
@@ -23,9 +27,9 @@ project realized using the following components:
 
 4. adding VM IP/hostname to router */etc/hosts* settings for convenience
 
-5. adapting the target for the git clone  
+5. *(optional for NGINX use case) adapting the target for the git clone*  
 or  
-providing content for the web-hosting within the project folder to be copied or linked to /home/www during **nginx_provision.sh** provisioning
+*providing content for static web-hosting within the project folder which is linked to `/home/www` during provisioning*
 
 6. bringing the machine up exporting the VAGRANT_DEFAULT_PROVIDER=libvirt variable and `vagrant up`  
 or  

@@ -15,4 +15,9 @@ setup-keymap de de
 echo "... adding timezone"
 apk add tzdata
 ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+
+echo "... adding other useful modules"
+apk add nano
+
 echo "... basic provision successful"
+

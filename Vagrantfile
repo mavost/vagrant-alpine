@@ -62,7 +62,8 @@ Vagrant.configure("2") do |config|
     machine.vm.provision "shell", inline: <<-SHELL
       cp /etc/hosts /etc/hosts.bak && sed 's/#{alpine}/#{hostname}/g' /etc/hosts.bak > /etc/hosts
     SHELL
-    machine.vm.provision "shell", path: "scripts/nginx_provision.sh"
+    #machine.vm.provision "shell", path: "scripts/nginx_provision.sh"
+    machine.vm.provision "shell", path: "scripts/docker_provision.sh"
   end
   # Enable provisioning with a shell script. Additional provisioners such as
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
